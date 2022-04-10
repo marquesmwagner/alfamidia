@@ -59,12 +59,11 @@ public class Pessoa {
 
     @Override
     public String toString() {
-        return 
-                "Nome: " + getNome() + 
-                ", Telefone: " + getTelefone() +  
-                ", Data de Nascimento: " + getDataNascimento() +
-                ", Data de Cadastro: " + getDataCadastro() +
-                ", Data de Alteração: " + getDataAlteracao();
+        return "Nome: " + getNome() +
+                " | Telefone: " + getTelefone() +
+                " | Data de Nascimento: " + getDataNascimento() +
+                " | Data de Cadastro: " + getDataCadastro() +
+                " | Data de Alteração: " + getDataAlteracao() + "\n";
     }
 
 }
