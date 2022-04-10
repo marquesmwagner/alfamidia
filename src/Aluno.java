@@ -22,7 +22,7 @@ public class Aluno extends Pessoa {
     public String toString() {
         return
                 "Nome: " + getNome() +
-                ", Telefone =" + getTelefone() +
+                ", Telefone: " + getTelefone() +
                 ", Data de Nascimento: " + getDataNascimento() +
                 ", Data de Cadastro: " + getDataCadastro() +
                 ", Data de Alteração: " + getDataAlteracao() +
