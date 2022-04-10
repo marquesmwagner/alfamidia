@@ -1,7 +1,7 @@
 # alfamidia
 ## Projeto CRUD Java
 
-Projeto de cadadatros de Pessoas ou Alunos, rodando direto no terminal.
+Projeto de cadastros de Pessoas ou Alunos, rodando direto no terminal.
 
 ### 🛠 Tecnologias
 
