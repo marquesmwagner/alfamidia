@@ -14,7 +14,6 @@ public class Programa {
     }
 
     public void cadastrar() {
-
         System.out.println("\nDigite o nome:");
         String nome = sc.nextLine();
         System.out.println("\nDigite o telefone:");
