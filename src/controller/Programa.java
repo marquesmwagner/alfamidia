@@ -1,17 +1,19 @@
+package controller;
+
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
+import model.Aluno;
+import model.Pessoa;
+import view.Menu;
+
 public class Programa {
 
     Scanner sc = new Scanner(System.in);
-    List<Pessoa> pessoasCadastradas = new ArrayList<>();
-    List<Aluno> alunosCadastrados = new ArrayList<>();
-
-    public Programa() {
-        System.out.println("\nBem-vindo ao Programa de Cadastro de Pessoas e Alunos");
-    }
+    static List<Pessoa> pessoasCadastradas = new ArrayList<>();
+    static List<Aluno> alunosCadastrados = new ArrayList<>();
 
     public void cadastrar() {
         System.out.println("\nDigite o nome:");
@@ -77,7 +79,7 @@ public class Programa {
                 System.out.println("Voltar ao menu? (S/N)\n");
                 String op = sc.nextLine();
                 if (op.equals("s") || op.equals("S")) {
-                    menuCadastro();
+                    Menu.menuCadastro();
                 }
                 atualizarCadastro();
             }
@@ -91,7 +93,6 @@ public class Programa {
             // Data de cadastro pode ser modificada?
             pessoasCadastradas.get(index).setDataAlteracao(LocalDate.now());
             System.out.println("\nCadastro de Pessoa atualizado com sucesso!");
-            menuCadastro();
 
         } else if (opcao.equals("2")) {
             System.out.println("\nDigite o nome do aluno a ser atualizado:");
@@ -108,7 +109,7 @@ public class Programa {
                 System.out.println("Voltar ao menu? (S/N)\n");
                 String op = sc.nextLine();
                 if (op.equals("s") || op.equals("S")) {
-                    menuCadastro();
+                    Menu.menuCadastro();
                 }
                 atualizarCadastro();
             }
@@ -125,10 +126,9 @@ public class Programa {
             // Data de cadastro pode ser modificada?
             pessoasCadastradas.get(index).setDataAlteracao(LocalDate.now());
             System.out.println("\nCadastro de Aluno atualizado com sucesso!");
-            menuCadastro();
 
         } else if (opcao.equals("3")) {
-            menuCadastro();
+            Menu.menuCadastro();
         } else {
             System.out.println("\nOpção inválida. Insira uma opção válida.");
             atualizarCadastro();
@@ -159,14 +159,13 @@ public class Programa {
                 System.out.println("Voltar ao menu? (S/N)\n");
                 String op = sc.nextLine();
                 if (op.equals("s") || op.equals("S")) {
-                    menuCadastro();
+                    Menu.menuCadastro();
                 }
                 removerCadastro();
             }
 
             pessoasCadastradas.remove(index);
             System.out.println("\nPessoa removida com sucesso!");
-            menuCadastro();
 
         } else if (opcao.equals("2")) {
             System.out.println("\nDigite o nome do aluno a ser atualizado:");
@@ -183,17 +182,16 @@ public class Programa {
                 System.out.println("Voltar ao menu? (S/N)\n");
                 String op = sc.nextLine();
                 if (op.equals("s") || op.equals("S")) {
-                    menuCadastro();
+                    Menu.menuCadastro();
                 }
                 removerCadastro();
             }
 
             alunosCadastrados.remove(index);
             System.out.println("\nAluno removido com sucesso!");
-            menuCadastro();
 
         } else if (opcao.equals("3")) {
-            menuCadastro();
+            Menu.menuCadastro();
         } else {
             System.out.println("\nOpção inválida. Insira uma opção válida.");
             removerCadastro();
@@ -203,54 +201,11 @@ public class Programa {
 
     public void encerrarPrograma() {
         System.out.println("\nPrograma encerrado.");
-        
-    }
-
-    public void menuCadastro() {
-        Scanner sc = new Scanner(System.in);
-        boolean programaEncerra = false;
-
-        do {
-            System.out.println("\n||    MENU DE OPÇÕES  ||\n");
-            System.out.println("Escolha umas das opções a seguir:\n");
-            System.out.println("Opção 1 - Cadastrar nova Pessoa ou Aluno");
-            System.out.println("Opção 2 - Exibir Pessoas e Alunos cadastrados");
-            System.out.println("Opção 3 - Atualizar Cadastro de Pessoa ou Aluno");
-            System.out.println("Opção 4 - Remover Cadastro de Pessoa ou Aluno");
-            System.out.println("Opção 5 - Encerrar o Programa\n");
-
-            String opcao = sc.nextLine();
-
-            switch (opcao) {
-                case "1":
-                    cadastrar();
-                    break;
-                case "2":
-                    exibirCadastros();
-                    break;
-                case "3":
-                    atualizarCadastro();
-                    break;
-                case "4":
-                    removerCadastro();
-                    break;
-                case "5":
-                    encerrarPrograma();
-                    programaEncerra = true;
-                    sc.close();
-                    break;
-                default:
-                    System.out.println("\nOpção inválida. Insira uma opção válida\n");
-                    break;
-            }
-        } while (!programaEncerra);
 
     }
 
     public static void iniciarPrograma() {
-        Programa metodos = new Programa();
-        metodos.menuCadastro();
-
+        Menu.menuCadastro();
     }
 
 }
