@@ -20,7 +20,7 @@ public class Programa {
         String telefone = sc.nextLine();
         System.out.println("\nDigite a data de nascimento:");
         String dataNascimento = sc.nextLine();
-        System.out.println("\nEntre com a nota final se for um aluno:");
+        System.out.println("\nEntre com a nota final se for um aluno. Se for uma pessoa entre com 0:");
         double notaFinal = sc.nextDouble();
         sc.nextLine();
         LocalDate dataCadastro = LocalDate.now();
