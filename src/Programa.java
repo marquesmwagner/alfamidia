@@ -202,9 +202,8 @@ public class Programa {
     }
 
     public void encerrarPrograma() {
-        System.err.println("\nPrograma encerrado.");
-        sc.close();
-
+        System.out.println("\nPrograma encerrado.");
+        
     }
 
     public void menuCadastro() {
